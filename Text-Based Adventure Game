@@ -1,0 +1,113 @@
+import time
+
+def intro():
+    print("Welcome to the Adventure of Alex!")
+    print("You wake up in a mysterious forest with no memory of how you got there.")
+    print("You see two paths ahead of you.")
+
+def forest_path():
+    print("\nYou walk down the forest path.")
+    print("You hear rustling in the bushes. What do you do?")
+    print("A. Investigate the rustling.")
+    print("B. Ignore it and continue walking.")
+
+    choice = input("Enter your choice (A/B): ").upper()
+
+    if choice == "A":
+        print("\nYou cautiously approach the bushes.")
+        print("Suddenly, a squirrel jumps out and runs away.")
+        time.sleep(1)
+        print("You continue on your way.")
+        time.sleep(1)
+        continue_journey()
+    elif choice == "B":
+        print("\nYou ignore the rustling and continue walking.")
+        time.sleep(1)
+        print("The path leads you deeper into the forest.")
+        time.sleep(1)
+        continue_journey()
+    else:
+        print("\nInvalid choice. Please enter 'A' or 'B'.")
+        forest_path()
+
+def continue_journey():
+    print("\nYou come to a fork in the path.")
+    print("One path leads further into the forest, and the other leads to a river.")
+    print("Which path do you take?")
+    print("A. Follow the path into the forest.")
+    print("B. Head towards the river.")
+
+    choice = input("Enter your choice (A/B): ").upper()
+
+    if choice == "A":
+        print("\nYou continue your journey deeper into the forest.")
+        time.sleep(1)
+        forest_encounter()
+    elif choice == "B":
+        print("\nYou decide to head towards the river.")
+        time.sleep(1)
+        river_encounter()
+    else:
+        print("\nInvalid choice. Please enter 'A' or 'B'.")
+        continue_journey()
+
+def forest_encounter():
+    print("\nAs you venture deeper into the forest, you encounter a mysterious figure.")
+    print("They offer to guide you out of the forest in exchange for a valuable item.")
+    print("What do you do?")
+    print("A. Accept the offer and give them your item.")
+    print("B. Decline the offer and continue on your own.")
+
+    choice = input("Enter your choice (A/B): ").upper()
+
+    if choice == "A":
+        print("\nYou give the mysterious figure your item.")
+        time.sleep(1)
+        print("They lead you safely out of the forest.")
+        time.sleep(1)
+        end_story()
+    elif choice == "B":
+        print("\nYou politely decline the offer and continue on your own.")
+        time.sleep(1)
+        print("The path becomes increasingly difficult, but you eventually find your way out.")
+        time.sleep(1)
+        end_story()
+    else:
+        print("\nInvalid choice. Please enter 'A' or 'B'.")
+        forest_encounter()
+
+def river_encounter():
+    print("\nAs you approach the river, you see a small boat tied to a tree.")
+    print("You can hear the sound of rushing water nearby.")
+    print("What do you do?")
+    print("A. Take the boat and row down the river.")
+    print("B. Follow the riverbank to find another way across.")
+
+    choice = input("Enter your choice (A/B): ").upper()
+
+    if choice == "A":
+        print("\nYou take the boat and start rowing down the river.")
+        time.sleep(1)
+        print("The current is strong, but you manage to navigate safely.")
+        time.sleep(1)
+        end_story()
+    elif choice == "B":
+        print("\nYou decide to follow the riverbank in search of another way across.")
+        time.sleep(1)
+        print("After some time, you find a bridge and safely cross the river.")
+        time.sleep(1)
+        end_story()
+    else:
+        print("\nInvalid choice. Please enter 'A' or 'B'.")
+        river_encounter()
+
+def end_story():
+    print("\nCongratulations! You have successfully navigated through the adventure.")
+    print("Thank you for playing!")
+
+def main():
+    intro()
+    forest_path()
+
+if __name__ == "__main__":
+    main()
